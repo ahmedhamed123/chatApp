@@ -56,14 +56,15 @@ class ChatScreen extends StatelessWidget {
           }, icon: const Icon(Icons.arrow_forward_ios,size: 35,color: Colors.white,))
         ],
       ),
-      body: SingleChildScrollView(
+      body: SafeArea(
+     child: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             //---------------------
             Container(
-              height: size.height / 1.25,
+              height: size.height/1 ,
               width: size.width,
               child: StreamBuilder<QuerySnapshot>(
                 stream: _firestore.collection('chatroom').doc(chatId).
@@ -148,7 +149,7 @@ class ChatScreen extends StatelessWidget {
             )
           ],
         ),
-      ),
+      ),),
     );
   }
 
