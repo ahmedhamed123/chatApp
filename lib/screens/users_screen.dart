@@ -1,4 +1,5 @@
 import 'package:chat/screens/chat_screen.dart';
+import 'package:chat/screens/welcomescreen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
@@ -74,7 +75,7 @@ String chatId(String user1,String user2){
         actions: [
           IconButton(onPressed: (){
             FirebaseAuth.instance.signOut();
-            Navigator.pop(context);
+            Navigator.pushReplacement(context,MaterialPageRoute(builder: (_)=>WelcomeScreen()) );
           }, icon: const Icon(Icons.logout,size: 35,color: Colors.white,))
         ],
 
